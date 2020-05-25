@@ -16,7 +16,7 @@ def second_supply_for_fourth_of_july(holiday_hash)
        :memorial_day => ["BBQ"]
      }
    }
-  holiday_hash[:summer][:fourth_of_july][1]
+  holiday_hash[:summer][:fourth_of_july][1] = second_supply_for_fourth_of_july 
 end
 
 
