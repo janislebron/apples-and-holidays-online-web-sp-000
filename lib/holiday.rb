@@ -1,22 +1,30 @@
 require 'pry'
 
-def second_supply_for_fourth_of_july(holiday_hash)
-  holiday_hash.each do |season, holiday|
-    if season == :spring
-      holiday.each do |occasion, supplies|
-        return "#{supplies.join("")}"
-    end
-  end
+holiday_supplies = {
+  :winter => {
+    :christmas => ["Lights", "Wreath"],
+    :new_years => ["Party Hats"]
+  },
+  :summer => {
+    :fourth_of_july => ["Fireworks", "BBQ"]
+  },
+  :fall => {
+    :thanksgiving => ["Turkey"]
+  },
+  :spring => {
+    :memorial_day => ["BBQ"]
+  }
+}
+
+def second_supply_for_fourth_of_july(holiday_supplies)
+  holiday_supplies[:summer][:fourth_of_july][1]
 end
+
+second_supply_for_fourth_of_july(holiday_supplies)
 
 
 def add_supply_to_winter_holidays(holiday_hash, supply)
-  holiday_hash.each do |season, holiday|
-    if season == :winter
-      holiday.each do |holiday, supplies|
-        supplies << supply
-    end
-  end
+  holiday_hash[:winter].each {|k, v| holiday_hash[:winter][k] << supply }
 end
 
 
