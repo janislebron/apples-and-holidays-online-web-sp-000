@@ -58,12 +58,11 @@ def all_supplies_in_holidays(holiday_hash)
 end
 
 def all_holidays_with_bbq(holiday_hash)
-  hello = []
-
-  holiday_hash.each do |z, w|
-    w.each do |x,y|
-      if y.include?("BBQ")
-        hello << x
-      end
-    end
+  holiday_hash.map do |season, holiday|
+    holiday.map do |holiday, item|
+      holiday if item.include?("BBQ")
+    end 
+  end.flatten.compact
 end
+
+all_holidays_with_bbq(holiday_supplies)
