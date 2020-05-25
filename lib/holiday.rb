@@ -77,5 +77,5 @@ def all_holidays_with_bbq(holiday_hash)
       if y.include?("BBQ")
         hello << x
       end
-    end    
+    end
 end
