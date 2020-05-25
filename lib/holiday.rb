@@ -1,9 +1,27 @@
 require 'pry'
 
+def test_h
+{
+     :winter => {
+       :christmas => ["Lights", "Wreath"],
+       :new_years => ["Party Hats"]
+     },
+     :summer => {
+       :fourth_of_july => ["Fireworks", "BBQ"]
+     },
+     :fall => {
+       :thanksgiving => ["Turkey"]
+     },
+     :spring => {
+       :memorial_day => ["BBQ"]
+     }
+   }
+end
+
 def second_supply_for_fourth_of_july(holiday_hash)
-  holiday_hash.each do |season , holiday|
+  holiday_hash.each do |season, holiday|
     if season == :spring
-      holiday.each do |occasion , supplies|
+      holiday.each do |occasion, supplies|
         return "#{supplies.join("")}"
     end
   end
