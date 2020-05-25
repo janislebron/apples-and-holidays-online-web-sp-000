@@ -47,15 +47,15 @@ def all_winter_holiday_supplies(holiday_hash)
 end
 
 def all_supplies_in_holidays(holiday_hash)
-  holiday_hash.each do |k, v|
-    puts "#{k.capitalize}"
-      v.each do |x, y|
-        title = x.to_s.tr("_", " ").split
-        puts "  #{title.collect {|x| x.capitalize}.join("")}: #{y.join(", ")}"
-      end
-  end
-
+  holiday_hash.each do | season, holiday|
+     puts "#{season.capitalize}:"
+     holiday.each do |holiday, item|
+       puts "  #{holiday.to_s.split("_").map {|i| i.capitalize}.join(" ")}: #{item.join(", ")}"
+     end
+  end 
 end
+
+all_supplies_in_holidays(holiday_supplies)
 
 def all_holidays_with_bbq(holiday_hash)
   holiday_hash.map do |season, holiday|
