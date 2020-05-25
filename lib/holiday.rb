@@ -52,6 +52,12 @@ def all_supplies_in_holidays(holiday_hash)
 end
 
 def all_holidays_with_bbq(holiday_hash)
+  hello = []
 
-
+  holiday_hash.each do |z, w|
+    w.each do |x,y|
+      if y.include?("BBQ")
+        hello << x
+      end
+    end    
 end
